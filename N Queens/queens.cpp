@@ -12,7 +12,7 @@
 using namespace std;
 
 int n;
-
+int numSol = 0;
 
 bool isSafe(vector<vector<int> > board)
 {
@@ -64,6 +64,7 @@ bool findSolutions(vector<vector<int> > board, int col)
         return false;
     
     if(col == board.size()) {
+        numSol++;
         printBoard(board);
         return true;
     }
@@ -84,22 +85,24 @@ bool findSolutions(vector<vector<int> > board, int col)
 void solveNQueens(const int n)
 {
     if(n < 1) {
-        cout << "Solution does not exist";
+        cout << "Solution does not exist" << endl;
     }
+    else {
+        vector<vector<int> > board;
     
-    vector<vector<int> > board;
+        board.resize(n);
     
-    board.resize(n);
+        for(int i = 0; i < n; i++)
+            board[i].resize(n);
     
-    for(int i = 0; i < n; i++)
-        board[i].resize(n);
+        for(int r = 0; r < n; r++)
+            for(int c = 0; c < n; c++)
+                board[r][c] = 0;
     
-    for(int r = 0; r < n; r++)
-        for(int c = 0; c < n; c++)
-            board[r][c] = 0;
-    
-    if(findSolutions(board, 0) == false)
-        cout << "No solutions exist" << endl;
+        findSolutions(board, 0);
+        
+        cout << n << "-queens has " << numSol << " solutions. " << endl;
+    }
 }
 
 int main()
