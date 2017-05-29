@@ -3,6 +3,8 @@ A program that solves the classic N queens problem by finding the number solutio
 
 I implemented a backtracking solution in three different ways out of curiosity.  I wanted to see how fast each method compared to the others.  Not surprisingly, the solutions using vectors and arrays were blown away in terms of time and space efficiency by the solution using bitshifts.
 
+Here is how long each took:
+
 | Method        | 11 queens     | 12 Queens  |
 | ------------- | -------------:| ----------:|
 | vectors       | 12.815 sec.   | 78.937 sec.|

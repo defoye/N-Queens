@@ -115,8 +115,8 @@ void findSolutions(const int n, int board[], int col) {
  *
  *  @param {const int} n - Number of queens.
  *  @param {int} leftDiag - Top-left-to-bottom-right diagonals threatend by queens.
- *  @param {int} somebody - Columns threatened by queens.
- *  @param {int} somebody - Top-right-to-bottom-left diagonals threatend by queens.
+ *  @param {int} col - Columns threatened by queens.
+ *  @param {int} rightdiag - Top-right-to-bottom-left diagonals threatend by queens.
  */
 void findSolutions(const int n, int leftDiag, int col, int rightDiag) {
     
